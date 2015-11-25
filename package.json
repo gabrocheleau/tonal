@@ -6,7 +6,7 @@
   "main": "index.html",
   "scripts": {
     "server": "http-server",
-    "update": "npm i ../tonal/lib",
+    "update": "npm i ../tonal",
     "watch-scales": "watchify -t riotify lib/scales.js -o js/scales.js -v",
     "watch-keys": "watchify -t riotify lib/keys.js -o js/keys.js -v",
     "watch-cycle": "watchify lib/cycle-of-fifhts/index.js -o js/cycle-of-fifhts.js -v"
@@ -24,9 +24,8 @@
   "dependencies": {
     "d3": "^3.5.6",
     "riot": "^2.2.4",
-    "soundfont-player": "^0.4.0",
-    "tonal": "file:../tonal/lib",
-    "tonal-tools": "file:../tonal"
+    "soundfont-player": "0.x.0",
+    "tonal": "file:../tonal/",
   },
   "devDependencies": {
     "riotify": "^0.1.2"
