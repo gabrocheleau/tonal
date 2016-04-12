@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Scales premier | tonal</title>
+  <link rel="stylesheet" href="tufte.css"/>
+  <link rel="stylesheet" href="prism.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    div#tonics { width: 100%; overflow: hidden; }
+    div#tonics a { display: block; float: left; width: 2em; padding: 0.5em 0;
+      text-align: center; margin-right: 0.2em; }
+    div#tonics a.active { font-weight: bold; }
+    pre[class*="language-"] { margin-top: -1.5em; padding: 0 0 0 0em; background: #fffff8; }
+    section#scales { width: 100%; overflow: hidden; }
+    section#scales a { display: block; float: left; width: 23%;
+      margin-right: 2%; background: none; height: 1.4em; }
+    section#scales a.active { font-weight: bold; }
+  </style>
+  </head>
+  <body>
+    <h4><a href="/">&larr; Back</a></h4>
+    <article>
+      <h1>Work with scales</h1>
+      <p class="subtitle">A <span class="code">tonal</span> tutorial.</p>
+      <section>
+        <h2>Creating scales</h2>
+        <p>The <span class="code">scale</span> function from <a
+        href="https://www.npmjs.com/package/music-scale"><span
+        class="code">music-scale</span></a> package it's the primary function to
+        create scales in tonal. This function is available in tonal as
+        <span class="code">tonal.scale</span></p>
+      </section>
+      <section>
+        <h3>Create scale using type and tonic</h3>
+        <p>This is the basic usage. If tonic is a pitch class, the scale
+        notes will be pitch classes:</p>
+        <pre><code class="language-js">
+          var scale = require('music-scale')
+          scale('major', 'A')
+          // => ['A', 'B', 'C#', 'D', 'E', 'F#', 'G#']
+
+          // or using tonal
+          tonal.scale('major', 'A')
+          // => ['A', 'B', 'C#', 'D', 'E', 'F#', 'G#']
+        </code></pre>
+        <p>If you use a note as a tonic, properly octaved notes are returned:</p>
+        <pre><code class="language-js">
+          tonal.scale('major', 'A4')
+          // => ['A4', 'B4', 'C#5', 'D5', 'E5', 'F#5', 'G#5']
+        </code></pre>
+      </section>
+      <section>
+        <h3>Create scale using intervals and tonic</h3>
+        <p>The <span class="code">scale</span> function accepts a list of
+        intervals as first parameter:</p>
+        <pre><code class="language-js">
+          tonal.scale('1P 2M 3M 4P 5P 6M 7m 8P', 'A4')
+          // => ['A4', 'B4', 'C#5', 'D5', 'E5', 'F#5', 'G5', 'A5']
+        </code></pre>
+        <p>Again, you can use pitch classes:</p>
+        <pre><code class="language-js">
+          tonal.scale('1P 2M 3M 4P 5P 6M 7m 8P', 'A')
+          // => ['A', 'B', 'C#', 'D', 'E', 'F#', 'G', 'A']
+        </code></pre>
+      </section>
+      <section>
+        <h3>Get scale intervals</h2>
+        <p>Use <span class="code">false</span> as tonic to get scale intervals:</p>
+        <pre><code class="language-js">
+          tonal.scale('major', false)
+          // => ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'M7']
+        </code></pre>
+      </section>
+      <section>
+        <h3>Get scale from scale name</h3>
+        <p><span class="code">scale.get</span> is a convenient function to create
+        scales using the complete scale name (instead to type and tonic):</p>
+        <pre><code class="language-js">
+          tonal.scale.get('A major')
+          // => ['A', 'B', 'C#', 'D', 'E', 'F#', 'G#']
+        </code></pre>
+      </section>
+      <section>
+        <h3>Get available scale names</h3>
+        <p>The <span class="code">scale.names</span> function returns all the
+        scale names:</p>
+        <pre><code class="language-js">
+          tonal.scale.names()
+          // => ['major', 'minor', ...]
+          tonal.scale.names(true)
+          // => ['major', 'ionian', 'minor', 'aeolian', ...]
+        </code></pre>
+      </section>
+      <section>
+        <h2>List of available scales</h2>
+
+        <p>Here is a list of included scales (without aliases) in alphabetical
+        order. You can change the tonic and the scale showed on the score:</p>
+        <div id="scales-app" />
+      </section>
+    </article>
+  <script type="text/javascript" src="js/prism.js"></script>
+  <script type="text/javascript" src="js/tonal.min.js"></script>
+  <script type="text/javascript" src="js/vexflow-min.js"></script>
+  <script type="text/javascript" src="js/scales.js"></script>
+</body>
