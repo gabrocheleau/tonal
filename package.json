@@ -7,6 +7,7 @@
   "scripts": {
     "server": "http-server",
     "update": "npm i ../tonal",
+    "chord-and-scales": "watchify examples/chords-and-scales.js -o js/chords-and-scales.js -v",
     "watch-scales": "watchify -t riotify lib/scales.js -o js/scales.js -v",
     "watch-keys": "watchify -t riotify lib/keys.js -o js/keys.js -v",
     "watch-cycle": "watchify lib/cycle-of-fifhts/index.js -o js/cycle-of-fifhts.js -v"
@@ -24,7 +25,8 @@
   "dependencies": {
     "hyperscript": "^1.4.7",
     "scorejs": "^0.10.0",
-    "snabbdom": "^0.4.2"
+    "snabbdom": "^0.4.2",
+    "soundfont-player": "^0.7.0"
   },
   "devDependencies": {
     "eslint-config-standard": "^5.1.0",
