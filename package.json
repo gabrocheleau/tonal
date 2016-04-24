@@ -7,7 +7,7 @@
   "scripts": {
     "server": "http-server",
     "update": "npm i ../tonal",
-    "chord-and-scales": "watchify examples/chords-and-scales.js -o js/chords-and-scales.js -v",
+    "chord-and-scales": "watchify lib/chords-and-scales.js -o js/chords-and-scales.js -v",
     "watch-scales": "watchify -t riotify lib/scales.js -o js/scales.js -v",
     "watch-keys": "watchify -t riotify lib/keys.js -o js/keys.js -v",
     "watch-cycle": "watchify lib/cycle-of-fifhts/index.js -o js/cycle-of-fifhts.js -v"
