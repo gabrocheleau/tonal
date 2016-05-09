@@ -26,7 +26,10 @@
     "hyperscript": "^1.4.7",
     "scorejs": "^0.10.0",
     "snabbdom": "^0.4.2",
-    "soundfont-player": "^0.7.0"
+    "soundfont-player": "^0.7.0",
+    "tonal-chord": "^0.50.1",
+    "tonal-range": "^0.51.1",
+    "tonal-scale": "^0.50.0"
   },
   "devDependencies": {
     "eslint-config-standard": "^5.1.0",
