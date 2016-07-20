@@ -5,6 +5,8 @@
   "description": "Tonal library demos",
   "main": "index.html",
   "scripts": {
+    "test": "tape ask/test/*.js",
+    "start": "budo ask/app/index.js && open http://localhost:9966/ask/",
     "server": "http-server",
     "update": "npm i ../tonal",
     "chord-and-scales": "watchify lib/chords-and-scales.js -o js/chords-and-scales.js -v",
@@ -24,10 +26,15 @@
   "homepage": "https://github.com/danigb/tonal#readme",
   "dependencies": {
     "hyperscript": "^1.4.7",
+    "note-parser": "^2.0.0",
     "scorejs": "^0.10.0",
     "snabbdom": "^0.4.2",
     "soundfont-player": "^0.7.0",
+    "tape": "^4.6.0",
+    "tonal": "^0.50.3",
     "tonal-chord": "^0.50.1",
+    "tonal-key": "^0.50.2",
+    "tonal-progression": "^0.50.0",
     "tonal-range": "^0.51.1",
     "tonal-scale": "^0.50.0"
   },
